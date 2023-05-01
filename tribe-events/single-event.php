@@ -11,6 +11,10 @@
  *
  */
 
+if(true){
+    wp_die("Kein Zugriff auf diese Veranstaltung");
+}
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
