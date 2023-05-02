@@ -1,5 +1,15 @@
 <?php
 /**
+ * Purpose:
+ *      Modify Single Event Template to restrict access and clean up unused/unwanted features
+ * Author: Kilian Speder
+ * Creation Date: 01.05.2023
+ * Last Modified: 03.05.2023
+ *
+ */
+
+
+/**
  * Single Event Template
  * A single event. This displays the event title, description, meta, and
  * optionally, the Google map for the event.
@@ -11,7 +21,51 @@
  *
  */
 
-if(true){
+$event_id = Tribe__Events__Main::postIdHelper( get_the_ID() );
+/**
+ * Allows filtering of the event ID.
+ *
+ * @since 6.0.1
+ *
+ * @param int $event_id
+ */
+$event_id = apply_filters( 'tec_events_single_event_id', $event_id );
+
+
+
+
+/*
+ * access levels:
+ *      0 => public
+ *      1 => internal
+ *      2 => leiter only
+ */
+
+$post_category_ids = tribe_get_event_cat_ids( $event_id );
+$leiter_only_cat_id = 41;
+$public_cat_id = 42;
+$internal_cat_id = 43;
+
+
+if(!is_user_logged_in() && (in_array($internal_cat_id, $post_category_ids) || in_array($leiter_only_cat_id, $post_category_ids))){
+    get_template_part("error_page/event_access_denied.php", null, array(
+            "reason" => "not-logged-in"
+    ));
+    exit(0);
+
+} else {
+    $user = wp_get_current_user();
+    $roles = ( array ) $user->roles;
+    $leiter_only_role = "leiter";
+    if(in_array($leiter_only_cat_id, $post_category_ids) && !in_array($leiter_only_role, $roles)){
+        get_template_part("error_page/event_access_denied.php", null, array(
+            "reason" => "insufficient-role"
+        ));
+        exit(0);
+    }
+
+}
+if(false){
     wp_die("Kein Zugriff auf diese Veranstaltung");
 }
 
@@ -22,16 +76,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural   = tribe_get_event_label_plural();
 
-$event_id = Tribe__Events__Main::postIdHelper( get_the_ID() );
-
-/**
- * Allows filtering of the event ID.
- *
- * @since 6.0.1
- *
- * @param int $event_id
- */
-$event_id = apply_filters( 'tec_events_single_event_id', $event_id );
 
 /**
  * Allows filtering of the single event template title classes.
