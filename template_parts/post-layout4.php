@@ -55,7 +55,7 @@ global $optimizer;?>
                             	<!--DATE-->
                                 <i class="fa-calendar"></i><a class="comm_date"><?php the_time( get_option('date_format') ); ?></a>
                                 <!--AUTHOR-->
-                                <i class="fa-user"></i><?php global $authordata; $post_author = "<a class='auth_meta' href=\"".get_author_posts_url( $authordata->ID, $authordata->user_nicename )."\">".get_the_author()."</a>\r\n"; echo $post_author; ?>
+                                <i class="fa-user"></i><?php global $authordata; echo get_the_author();?>
                             	<!--CATEGORY-->
                               	<i class="fa-th-list"></i><div class="catag_list"><?php the_category(', '); ?></div>
                             </div>
