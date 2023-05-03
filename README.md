@@ -24,3 +24,19 @@ Modifying Optimzer theme to better fit the need of Minis Walldorf
 * hide **pacing wheel** in top right corner
 * hide **Widgets in Footer**
 * change **WPPA photo gallery** style
+
+## Deploy Modifications
+### PHP/Templates
+1. commit changes
+2. push to deployment remote (the web server hosts a git repo in theme folder)
+
+**OR**
+
+push changes via FTP
+
+### CSS
+Because WordPress and/or this child/parent theme combo is weird af, you cannot simply push the style sheet to the server
+1. push updated style sheet to server
+2. go into Dashboard->Tools->Child themes
+3. change child theme's version number
+4. manually overwrite functions.php on server with the one in this repo 
