@@ -35,8 +35,5 @@ Modifying Optimzer theme to better fit the need of Minis Walldorf
 push changes via FTP
 
 ### CSS
-Because WordPress and/or this child/parent theme combo is weird af, you cannot simply push the style sheet to the server
-1. push updated style sheet to server
-2. go into Dashboard->Tools->Child themes
-3. change child theme's version number
-4. manually overwrite functions.php on server with the one in this repo 
+
+same as php but make sure there is no "version" tag in CSS file header comment
