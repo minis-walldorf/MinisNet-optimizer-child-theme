@@ -22,3 +22,9 @@ Version: 0.0.1.1682898525
 .single_metainfo > .fa-comments-o {
     display: none;
 }
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
