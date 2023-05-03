@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
 /*
 CTC Separate Stylesheet
-Updated: 2023-05-01 01:48:45
+Updated: 2023-05-03 01:48:46
 Theme Name: Optimizer Minis Walldorf Edits
 Theme URI: https://github.com/minis-walldorf/MinisNet-optimizer-child-theme/
 Template: optimizer
@@ -9,22 +11,184 @@ Tags: two-columns,left-sidebar,custom-background,custom-colors,custom-menu,featu
 Version: 0.0.1.1682898525
 */
 
+/*
+    MAKE FOOTER STICK TO BOTTOM
+ */
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+
+/*
+    STICKY POSTS ON START PAGE
+ */
 .lay4_inner > .sticky {
     background-color: #e6e6e6  !important;
     padding-top: 15px !important;
     border-radius: 15px;
 }
 
-.meta_comm, .fa-comments {
-    display: none !important;
+/*
+    CALENDAR
+ */
+.tribe-events-view{
+    position: unset !important;
 }
 
-.single_metainfo > .fa-comments-o {
+.tribe-events-calendar-month__day-cell--selected time {
+    color: #ffffff !important;
+}
+
+.tribe-custom-btn-green {
+    background-color: #008016 !important;
+}
+
+.tribe-custom-font-size-2 {
+    font-size: var(--tec-font-size-2) !important;
+}
+
+/*
+    LOGO IN HEADER
+ */
+.logo {
+    font-family: Alata, sans-serif !important;
+}
+
+/*
+   MAIN MENU
+*/
+#topmenu ul li span {
+    opacity: 1 !important;
+}
+
+#topmenu ul li span.menu_arrow {
+    font-size: 12px;
+    opacity: 0.5;
+    padding-left: 5px;
+}
+
+.menu>.menu-item>a {
+    padding: 20px 10px !important;
+}
+
+#topmenu ul.menu>li:after, #frontsidebar .widget_nav_menu ul.menu>li:after {
+    margin-top: -10px !important;
+}
+
+#topmenu ul li ul li span {
+    display: unset !important;
+    font-size: 14px !important;
+    color: #fff;
+}
+
+/*
+    HIDE PACE WHEEL IN TOP RIGHT CORNER
+*/
+.pace-active {
+    display: none
+}
+
+/*
+    HIDE WIDGET AREA IN FOOTER
+*/
+#footer .widgets {display:none}
+
+.b1, .b2 {
+    display:none;
+}
+
+/*
+    WPPA PHOTO GALLERY
+ */
+
+.wppa-album-cover-link:not(div), div.wppa-album-cover-link>a {
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.5;
+    margin: 4px 0;
+    border-radius: 50px;
+    background-color: rgba(221,51,51,1);
+    cursor: pointer;
+    padding: 4px 10px !important;
+}
+
+
+.wppa-album-cover-link:not(div):hover, div.wppa-album-cover-link>a:hover {
+    background-color: #a91919;
+}
+
+.bod-block-popup-trigger  {
+    border-radius: 50px !important;
+    border-style: none;
+    font-size: 14pt;
+}
+
+.bod-block-popup-trigger:hover {
+    background-color: #a91919 !important;
+}
+
+.wppa-create-uploadbox~div{
+    clear: none !important;
+}
+
+.wppa-upload {
+    border: none;
+}
+
+.wppa-upload-uploadbox.wppa-album-cover-link, .wppa-create-uploadbox.wppa-album-cover-link{
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.5;
+    padding: 8px 20px;
+    margin: 4px 0;
+    border-radius: 50px;
+    background-color: rgba(221,51,51,1);
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px 20px !important;
+}
+
+.wppa-upload-uploadbox.wppa-album-cover-link:hover, .wppa-create-uploadbox.wppa-album-cover-link:hover {
+    background-color: #a91919;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+    float: left;
+}
+h6:after {
+    content: ":";
+}
+
+.wppa-td {
+    font-weight: bold;
+}
+
+.bod-block-title-closer{
+    cursor:pointer;
+    font-size: 40px;
+    text-align: center;
+}
+
+.bod-block-title-closer:hover{
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.wppa-upload-thumb.wppa-album-cover-link, .wppa-create-thumb.wppa-album-cover-link {
     display: none;
 }
 
-body{
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
+.wppa-create-cover, .wppa-upload-cover {
+    display: none !important;
+}
+
+.wppa-box-text.wppa-black.wppa-box-text-desc {
+    min-height: 20px !important;
 }
