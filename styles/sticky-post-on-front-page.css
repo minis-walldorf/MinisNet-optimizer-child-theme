@@ -1,0 +1,13 @@
+.sticky {
+    background-color: #e6e6e6  !important;
+    padding-top: 15px !important;
+    border-radius: 15px;
+}
+
+.meta_comm, .fa-comments {
+    display: none !important;
+}
+
+.single_metainfo > .fa-comments-o {
+    display: none;
+}
