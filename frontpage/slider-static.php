@@ -2,7 +2,8 @@
     Purpose:
         Replace front page content header of Optimizer plugin to include a slider (pro feature of Optimzer)
     Author: Kilian Speder
-    Date: 02.05.2023
+    Created At: 02.05.2023
+    Last Modified: 02.05.2023
 -->
 
 <?php global $optimizer; ?>
