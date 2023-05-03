@@ -9,7 +9,7 @@
  * @since Optimizer 1.0
  */
 global $optimizer;
-$no_post_thumb = false
+
 ?>
 
 <div class="lay4">
@@ -20,7 +20,7 @@ $no_post_thumb = false
                     <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
                         <!--POST THUMBNAIL START-->
-
+                        <?php $no_post_thumb = false; //initialize variable to prevent undefined errors?>
                         <!--CALL TO POST IMAGE-->
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="post_image">
