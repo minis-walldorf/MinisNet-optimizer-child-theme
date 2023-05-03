@@ -9,3 +9,16 @@ Tags: two-columns,left-sidebar,custom-background,custom-colors,custom-menu,featu
 Version: 0.0.1.1682898525
 */
 
+.lay4_inner > .sticky {
+    background-color: #e6e6e6  !important;
+    padding-top: 15px !important;
+    border-radius: 15px;
+}
+
+.meta_comm, .fa-comments {
+    display: none !important;
+}
+
+.single_metainfo > .fa-comments-o {
+    display: none;
+}
