@@ -191,3 +191,25 @@ h6:after {
 .wppa-box-text.wppa-black.wppa-box-text-desc {
     min-height: 20px !important;
 }
+
+/*
+    ADMIN DASHBOARD ACCENT COLOR
+ */
+#adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head, .folded #adminmenu li.current.menu-top {
+    color: #f0f0f1;
+    background: #dd3333;
+}
+
+#adminmenu .awaiting-mod, #adminmenu .update-plugins {
+    color: #f0f0f1;
+    background: #dd3333;
+}
+
+.wp-core-ui .button-primary {
+    background: #dd3333;
+    border-color: #dd3333;
+}
+#adminmenu a:hover, #adminmenu li.menu-top:hover, #adminmenu li.opensub > a.menu-top, #adminmenu li > a.menu-top:focus {
+    color: #f0f0f1;
+    background-color: #dd3333;
+}
