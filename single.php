@@ -77,11 +77,11 @@
             <?php endwhile ?> 
        
             <?php endif ?>
-            
+
 				<?php if (!empty ($optimizer['post_nextprev_id']) || is_customize_preview()) { ?>
 				<!--NEXT AND PREVIOUS POSTS START--> 
 					<?php if ( get_post_status ( get_the_ID() ) !== 'private' ) { ?>
-							<?php get_template_part('framework/core','nextprev'); ?>
+							<?php //get_template_part('framework/core','nextprev'); ?>
                     <?php } ?>
                 <!--NEXT AND PREVIOUS POSTS END-->          
                 <?php }?>
