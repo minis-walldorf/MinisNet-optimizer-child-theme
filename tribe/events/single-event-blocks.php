@@ -17,6 +17,8 @@
 
 $event_id = $this->get( 'post_id' );
 
+restrict_access_to_event($event_id);
+
 $is_recurring = '';
 
 if ( ! empty( $event_id ) && function_exists( 'tribe_is_recurring_event' ) ) {

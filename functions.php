@@ -75,3 +75,42 @@ add_action('init', function () {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
 });
+
+//function to restrict access to event
+
+function restrict_access_to_event($event_id){
+
+//user event_id to get array of category IDs of this event
+    $post_category_ids = tribe_get_event_cat_ids( $event_id );
+//relevent category IDs for role based access
+    $leiter_only_cat_id = 41;
+    $public_cat_id = 42;
+    $internal_cat_id = 43;
+
+//check if user is not logged in AND event is not public, then include "access denied" page with reason "not-logged-in" and exit
+    if(!is_user_logged_in() && !in_array($public_cat_id, $post_category_ids)){
+        get_template_part("error_page/access_denied", "event", array(
+            "reason" => "not-logged-in"
+        ));
+        exit;
+
+    } else {
+        //if user is logged in or event is public
+        if(is_user_logged_in()) {
+            //get user's roles
+            $user = wp_get_current_user();
+            $roles = ( array )$user->roles;
+
+            //define slug of role to access leiter_only events
+            $leiter_only_role = "leiter";
+            //if post is leiter_only and user does not have leiter_only_role, then include "access denied" page with reason "insufficient role" and exit
+            if ( !in_array($leiter_only_role, $roles) && in_array($leiter_only_cat_id, $post_category_ids)) {
+                get_template_part("error_page/access_denied", "event", array(
+                    "reason" => "insufficient-role"
+                ));
+                exit;
+            }
+        }
+    }
+
+}
