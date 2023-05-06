@@ -192,6 +192,10 @@ h6:after {
     min-height: 20px !important;
 }
 
+.wppa-cover-text-frame {
+    width: unset !important;
+}
+
 /*
     ADMIN DASHBOARD ACCENT COLOR
  */
