@@ -114,3 +114,13 @@ function restrict_access_to_event($event_id){
     }
 
 }
+
+//function to check if user is on front page
+function is_front_page_own(){
+    global $wp;
+    if(home_url( $wp->request ) == home_url()){
+        return true;
+    } else {
+        return false;
+    }
+}
