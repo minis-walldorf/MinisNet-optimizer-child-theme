@@ -88,7 +88,7 @@ $cost  = tribe_get_formatted_cost( $event_id );
 
 <div id="tribe-events-content" class="tribe-events-single">
     <?php
-      if(current_user_can_edit_events( )):
+      if(current_user_can('edit_tribe_events')):
     ?>
         <div class="edit_wrap">
             <a href="https://minis-walldorf-dev.de/wp-admin/post.php?post=<?php echo $event_id;?>&action=edit&classic-editor__forget&classic-editor">Edit</a>
