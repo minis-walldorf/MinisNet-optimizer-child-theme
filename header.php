@@ -32,7 +32,7 @@ $optimizer = optimizer_option_defaults();
 </div><!--layer_wrapper class END-->
 
 	<!--Slider START-->
-		<?php if (is_home() || is_front_page() || is_front_page_own()) { ?>
+		<?php if (is_home() && is_front_page()) { ?>
         
             <div id="slidera" class="layer_wrapper <?php if(!empty($optimizer['hide_mob_slide'])){ echo 'mobile_hide_slide';} ?>">
                 <?php $slidertype = $optimizer['slider_type_id']; ?>
