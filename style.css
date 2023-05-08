@@ -36,6 +36,11 @@ body{
     position: unset !important;
 }
 
+.tribe-events-single {
+    /*fix positioning of edit button in single event view*/
+    position: relative;
+}
+
 .tribe-events-calendar-month__day-cell--selected time {
     color: #ffffff !important;
 }
