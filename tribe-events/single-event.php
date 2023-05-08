@@ -88,13 +88,13 @@ $cost  = tribe_get_formatted_cost( $event_id );
 
 <div id="tribe-events-content" class="tribe-events-single">
     <?php
-      if(current_user_can_edit_events( )){
+      if(current_user_can_edit_events( )):
     ?>
         <div class="edit_wrap">
             <a href="https://minis-walldorf-dev.de/wp-admin/post.php?post=<?php echo $event_id;?>&action=edit&classic-editor__forget&classic-editor">Edit</a>
         </div>
-          <?php
-      }
+      <?php
+      endif;
     ?>
         <p class="tribe-events-back">
             <a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'All %s', '%s Events plural label', 'the-events-calendar' ), $events_label_plural ); ?></a>
